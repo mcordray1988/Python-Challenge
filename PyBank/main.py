@@ -2,7 +2,7 @@
 
 import pandas as pd
 
-df = pd.read_csv('/Users/morgancordray/Desktop/03-Python/Instructions/PyBank/Resources/budget_data.csv')
+df = pd.read_csv('./resources/budget_data.csv')
 months = df['Date'].count()
 total = df['Profit/Losses'].sum()
 change = df['Profit/Losses']

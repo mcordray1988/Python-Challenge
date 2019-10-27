@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv('/Users/morgancordray/Desktop/03-Python/Instructions/PyPoll/Resources/election_data.csv')
+df = pd.read_csv('./resources/election_data.csv')
 voteTotal = df['Voter ID'].count()
 Khan = df[df['Candidate'] == "Khan"]
 Correy = df[df['Candidate'] == "Correy"]
@@ -17,6 +17,7 @@ print(f"O\'Tooley: {round((OTooley.Candidate.count() / voteTotal)*100, 6)}% ({OT
 print("------------------------")
 winner = pd.DataFrame(df['Candidate'].value_counts())
 winner['Name'] = winner.index
+winner.reset_index()
 print(winner.head())
 
 k = winner.loc[winner['Candidate'] == winner['Candidate'].max()]
